@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#64296D">
+
+    <TextView
+        android:id="@+id/transferred_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_medium"
+        android:layout_marginTop="38dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:layout_toRightOf="@id/transferred_name"
+        android:layout_toEndOf="@id/transferred_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_medium"
+        android:layout_marginTop="38dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/score"
+        android:layout_toEndOf="@+id/score"
+        android:layout_marginTop="38dp"
+        android:textSize="@dimen/font_size_medium"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="0"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/question_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_below="@+id/transferred_name"
+        android:text="@string/question_number"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_medium"
+        />
+    <TextView
+        android:id="@+id/question_number_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/question_number"
+        android:layout_toRightOf="@+id/question_number"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_below="@+id/transferred_name"
+        android:text="@string/question_number_description"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_medium"
+        />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_extraLarge"
+        android:textColor="@color/white"
+        android:text="@string/timer"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/question_number"
+        android:layout_marginTop="80dp"
+        android:text="Here is the question"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large"
+        />
+
+    <Button
+        android:id="@+id/first_choice"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/question"
+        android:layout_marginTop="70dp"
+        android:text="a"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large"
+        android:background="@drawable/geography_button"
+        />
+    <Button
+        android:id="@+id/second_choice"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/first_choice"
+        android:layout_marginTop="20dp"
+        android:text="b"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large"
+        android:background="@drawable/history_button"
+        />
+
+    <Button
+        android:id="@+id/third_choice"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/second_choice"
+        android:layout_marginTop="20dp"
+        android:text="c"
+        android:textSize="@dimen/font_size_large"
+        android:textColor="@color/white"
+        android:background="@drawable/science_button"
+        />
+
+    <Button
+        android:id="@+id/forth_choice"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/third_choice"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/font_size_large"
+        android:text="d"
+        android:textColor="@color/white"
+        android:background="@drawable/mixed_button"
+        />
+
+
+</RelativeLayout>

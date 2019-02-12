@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title">Qiuzy Snake \n and Ladder</string>
+    <string name="first_button">One Player</string>
+    <string name="second_button">Two Player</string>
+    <string name="type_name">Please type your name!</string>
+    <string name="hint">Enter your name here...</string>
+    <string name="next">Next</string>
+    <string name="welcome">Welcome to Quizizz </string>
+    <string name="choose_quiz">Choose a quiz subject you \n wish to answer </string>
+    <string name="geography_quiz">Geography Quiz</string>
+    <string name="history_quiz">History Quiz</string>
+    <string name="science_quiz">Science Quiz</string>
+    <string name="mixed_quiz">Mixed Quiz</string>
+    <string name="score">score:</string>
+    <string name="question_number">1</string>
+    <string name="question_number_description">/5 Question</string>
+
+    <string name="timer">00:15</string>
+
+
+
+</resources>
