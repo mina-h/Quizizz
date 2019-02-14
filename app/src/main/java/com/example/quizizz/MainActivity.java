@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         String message = editText.getText().toString();
 
         // Log.d("MainActivity", "knappen tryckt");
-        Intent intent = new Intent(this,QuizTypes.class);
+        Intent intent = new Intent(this, QuizTypesActivity.class);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 

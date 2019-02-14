@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class QuizTypes extends AppCompatActivity {
+public class QuizTypesActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAG = "com.example.myapplication2.MESSAG";
     private Button button;
 
@@ -34,7 +34,7 @@ public class QuizTypes extends AppCompatActivity {
             public void onClick(View v) {
                 TextView editText = findViewById(R.id.typed_name);
                 String message = editText.getText().toString();
-                Intent intent = new Intent(QuizTypes.this, GeographyQuiz.class);
+                Intent intent = new Intent(QuizTypesActivity.this, QuizActivity.class);
                 intent.putExtra(EXTRA_MESSAG, message);
                 startActivity(intent);
             }
