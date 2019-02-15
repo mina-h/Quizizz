@@ -3,8 +3,10 @@ package com.example.quizizz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +17,11 @@ import static android.media.CamcorderProfile.get;
 public class QuizActivity extends AppCompatActivity {
 
 
-    ArrayList<Question> geography = new ArrayList<>();
+    ArrayList<Question> quiz;
+    ArrayList<Question> gQuiz = new ArrayList<>();
+    ArrayList<Question> hQuiz = new ArrayList<>();
+    ArrayList<Question> sQuiz = new ArrayList<>();
+
     private TextView pointsView;
     private TextView countView;
     private TextView questionView;
@@ -35,9 +41,11 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(QuizTypesActivity.EXTRA_MESSAG);
-
+        String quizCategory = intent.getStringExtra(QuizTypesActivity.EXTRA_MESSAG1);
         TextView displayMessageView = findViewById(R.id.transferred_name);
         displayMessageView.setText(message + "`s");
+
+
 
 
         pointsView = findViewById(R.id.points);
@@ -47,6 +55,8 @@ public class QuizActivity extends AppCompatActivity {
         button2 = findViewById(R.id.second_choice);
         button3 = findViewById(R.id.third_choice);
         button4 = findViewById(R.id.forth_choice);
+
+
 
 
 
@@ -94,12 +104,81 @@ public class QuizActivity extends AppCompatActivity {
                 "Fiji"
         );
 
+        Question question6 = new Question("World War I began in which year?",
+                "1914",
+                "1928",
+                "1938",
+                "1917",
+                "1914"
+        );
 
-        geography.add(question1);
-        geography.add(question2);
-        geography.add(question3);
-        geography.add(question4);
-        geography.add(question5);
+        Question question7 = new Question("Adolf Hitler was born in which country?",
+                "Austria",
+                "France",
+                "Germany",
+                "Austria",
+                "Hungary"
+        );
+
+        Question question8 = new Question("The disease that ravaged and killed a third \n " +
+                "of Europe's population in the 14th \n century is known as:",
+                "The Bubonic Plague",
+                "The White Death",
+                "The Black Plague",
+                "Smallpox",
+                "The Bubonic Plague"
+        );
+
+        Question question9 = new Question("The gas usually filled in the electric bulb is:",
+                "nitrogen",
+                "hydrogen",
+                "carbon dioxide",
+                "oxygen",
+                "nitrogen"
+        );
+        Question question10 = new Question("Which planet is known as the Red Planet?",
+                "Mars",
+                "Mercury",
+                "Mars",
+                " Earth",
+                "Jupiter"
+        );
+
+        Question question11 = new Question("Which of the following is necessary for \n burning (combustion)?",
+                "nitrogen",
+                "petrol",
+                "carbon",
+                "Oxygen",
+                "nitrogen"
+        );
+
+
+
+        gQuiz.add(question1); // 1-5 Geography
+        gQuiz.add(question2);
+        gQuiz.add(question3);
+        gQuiz.add(question4);
+        gQuiz.add(question5);
+        hQuiz.add(question6); // 6-8 History
+        hQuiz.add(question7);
+        hQuiz.add(question8);
+        sQuiz.add(question9);  // 9-11 Science
+        sQuiz.add(question10);
+        sQuiz.add(question11);
+
+
+
+        if (quizCategory.equals(getString(R.string.geography_quiz))){
+            quiz= gQuiz;
+        }
+        else if (quizCategory.equals(getString(R.string.history_quiz))){
+            quiz = hQuiz; }
+        else if (quizCategory.equals(getString(R.string.science_quiz))){
+           quiz = sQuiz ;
+        }
+
+
+
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -176,13 +255,13 @@ public class QuizActivity extends AppCompatActivity {
 
     private void updateQuestion() {
 
-            questionView.setText(geography.get(count).getQuestion());
-            button1.setText(geography.get(count).getChoice1());
-            button2.setText(geography.get(count).getChoice2());
-            button3.setText(geography.get(count).getChoice3());
-            button4.setText(geography.get(count).getChoice4());
+            questionView.setText(quiz.get(count).getQuestion());
+            button1.setText(quiz.get(count).getChoice1());
+            button2.setText(quiz.get(count).getChoice2());
+            button3.setText(quiz.get(count).getChoice3());
+            button4.setText(quiz.get(count).getChoice4());
 
-            answer = geography.get(count).getCorrectAnswer();
+            answer = quiz.get(count).getCorrectAnswer();
             count = count + 1;
             updateCount(count);
 
