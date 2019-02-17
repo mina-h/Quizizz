@@ -15,9 +15,9 @@
     <string name="score">score:</string>
     <string name="question_number">1</string>
     <string name="question_number_description">/5 Question</string>
-
+    <string name="result">Result:</string>
+    <string name="back">Return</string>
     <string name="timer">00:15</string>
-
 
 
 </resources>

@@ -11,20 +11,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 import static android.media.CamcorderProfile.get;
 
 public class QuizActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAG2 = "com.example.myapplication2.MESSAG2";
 
+    public static final String SCORE = "com.example.myapplication2.SCORE";
 
     ArrayList<Question> quiz;
     ArrayList<Question> gQuiz = new ArrayList<>();
     ArrayList<Question> hQuiz = new ArrayList<>();
     ArrayList<Question> sQuiz = new ArrayList<>();
+    ArrayList<Question> mQuiz = new ArrayList<>();
+
 
     private TextView pointsView;
     private TextView countView;
     private TextView questionView;
+    private TextView questionNumbers;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -33,6 +40,7 @@ public class QuizActivity extends AppCompatActivity {
     private String answer;
     private int score = 0;
     private int count = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +54,14 @@ public class QuizActivity extends AppCompatActivity {
         displayMessageView.setText(message + "`s");
 
 
-
-
         pointsView = findViewById(R.id.points);
         countView = findViewById(R.id.question_number);
+        questionNumbers = findViewById(R.id.question_number_description);
         questionView = findViewById(R.id.question);
         button1 = findViewById(R.id.first_choice);
         button2 = findViewById(R.id.second_choice);
         button3 = findViewById(R.id.third_choice);
         button4 = findViewById(R.id.forth_choice);
-
-
-
-
-
 
 
         Question question1 = new Question("Bucharest is the capital \n city of which country?",
@@ -96,7 +98,8 @@ public class QuizActivity extends AppCompatActivity {
                 "Maldives"
         );
 
-        Question question5 = new Question("Which of the following countries \n is located nearest to the equator?",
+        Question question5 = new Question("Which of the following\ncountries is located nearest" +
+                "\nto the equator?",
                 "Kenya",
                 "Kenya",
                 "Puerto Rico",
@@ -104,7 +107,7 @@ public class QuizActivity extends AppCompatActivity {
                 "Fiji"
         );
 
-        Question question6 = new Question("World War I began in which year?",
+        Question question6 = new Question("World War I began\nin which year?",
                 "1914",
                 "1928",
                 "1938",
@@ -120,8 +123,8 @@ public class QuizActivity extends AppCompatActivity {
                 "Hungary"
         );
 
-        Question question8 = new Question("The disease that ravaged and killed a third \n " +
-                "of Europe's population in the 14th \n century is known as:",
+        Question question8 = new Question("This disease killed a third" +
+                "\nof Europe'spopulationin the 14thcentury:",
                 "The Bubonic Plague",
                 "The White Death",
                 "The Black Plague",
@@ -153,7 +156,6 @@ public class QuizActivity extends AppCompatActivity {
         );
 
 
-
         gQuiz.add(question1); // 1-5 Geography
         gQuiz.add(question2);
         gQuiz.add(question3);
@@ -165,32 +167,34 @@ public class QuizActivity extends AppCompatActivity {
         sQuiz.add(question9);  // 9-11 Science
         sQuiz.add(question10);
         sQuiz.add(question11);
+        mQuiz.add(question3);  // mixed quiz
+        mQuiz.add(question5);
+        mQuiz.add(question10);
+        mQuiz.add(question7);
 
 
-
-        if (quizCategory.equals(getString(R.string.geography_quiz))){
-            quiz= gQuiz;
+        if (quizCategory.equals(getString(R.string.geography_quiz))) {
+            quiz = gQuiz;
+        } else if (quizCategory.equals(getString(R.string.history_quiz))) {
+            quiz = hQuiz;
+        } else if (quizCategory.equals(getString(R.string.science_quiz))) {
+            quiz = sQuiz;
+        } else if (quizCategory.equals(getString(R.string.mixed_quiz))) {
+            quiz = mQuiz;
         }
-        else if (quizCategory.equals(getString(R.string.history_quiz))){
-            quiz = hQuiz; }
-        else if (quizCategory.equals(getString(R.string.science_quiz))){
-           quiz = sQuiz ;
-        }
-
-
-
+        Collections.shuffle(quiz);
+        questionNumbers.setText("/" + quiz.size());
 
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (button1.getText().equals(answer)){
-                    score = score + 1;
+                if (button1.getText().equals(answer)) {
+                    score = score + 10;
                     updateScore(score);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -201,14 +205,13 @@ public class QuizActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (button2.getText().equals(answer)){
-                    score = score + 1;
+                if (button2.getText().equals(answer)) {
+                    score = score + 10;
                     updateScore(score);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
+                } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -218,14 +221,13 @@ public class QuizActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (button3.getText().equals(answer)){
-                    score = score + 1;
+                if (button3.getText().equals(answer)) {
+                    score = score + 10;
                     updateScore(score);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
+                } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -235,14 +237,13 @@ public class QuizActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (button4.getText().equals(answer)){
-                    score = score + 1;
+                if (button4.getText().equals(answer)) {
+                    score = score + 10;
                     updateScore(score);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
+                } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -250,10 +251,21 @@ public class QuizActivity extends AppCompatActivity {
         });
 
 
-        updateQuestion();
+            updateQuestion();
+
+
     }
 
     private void updateQuestion() {
+        if (count == quiz.size()) {
+            TextView text = findViewById(R.id.transferred_name);
+            String message = text.getText().toString();
+            Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+            intent1.putExtra(SCORE, score);
+            intent1.putExtra(EXTRA_MESSAG2, message);
+
+            startActivity(intent1);
+        }
 
             questionView.setText(quiz.get(count).getQuestion());
             button1.setText(quiz.get(count).getChoice1());
@@ -264,6 +276,7 @@ public class QuizActivity extends AppCompatActivity {
             answer = quiz.get(count).getCorrectAnswer();
             count = count + 1;
             updateCount(count);
+
 
     }
 

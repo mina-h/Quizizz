@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#64296D">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/images" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon"
+        android:layout_centerHorizontal="true"
+        android:text="@string/result"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/result_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/namee"
+        android:text="test"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/namee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/result"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:text="test"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/font_size_large"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/back"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_below="@+id/result_score"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/font_size_large"
+        android:layout_height="80dp"
+        android:layout_width="250dp"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back"
+        android:background="@drawable/science_button"
+
+        />
+
+
+
+
+
+
+</RelativeLayout>
