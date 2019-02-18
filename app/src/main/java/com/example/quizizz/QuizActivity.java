@@ -1,6 +1,7 @@
 package com.example.quizizz;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -192,10 +193,31 @@ public class QuizActivity extends AppCompatActivity {
                 if (button1.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
+
+                        startActivity(intent1);
+                    }
+                    else
+                        updateQuestion();
+
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
+
+                        startActivity(intent1);
+
+                    } else
                     updateQuestion();
                 }
             }
@@ -208,13 +230,33 @@ public class QuizActivity extends AppCompatActivity {
                 if (button2.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
 
+                        startActivity(intent1);
+                    }
+                    else
+                        updateQuestion();
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
+
+                        startActivity(intent1);
+
+                    } else
+                        updateQuestion();
                 }
+
             }
         });
 
@@ -224,12 +266,31 @@ public class QuizActivity extends AppCompatActivity {
                 if (button3.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
 
+                        startActivity(intent1);
+                    }
+                    else
+                        updateQuestion();
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
+
+                        startActivity(intent1);
+
+                    } else
+                        updateQuestion();
                 }
             }
         });
@@ -240,12 +301,31 @@ public class QuizActivity extends AppCompatActivity {
                 if (button4.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    updateQuestion();
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
 
+                        startActivity(intent1);
+                    }
+                    else
+                        updateQuestion();
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    if (count == quiz.size()) {
+                        TextView text = findViewById(R.id.transferred_name);
+                        String message = text.getText().toString();
+                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        intent1.putExtra(SCORE, score);
+                        intent1.putExtra(EXTRA_MESSAG2, message);
+
+                        startActivity(intent1);
+
+                    } else
+                        updateQuestion();
                 }
             }
         });
@@ -257,15 +337,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        if (count == quiz.size()) {
-            TextView text = findViewById(R.id.transferred_name);
-            String message = text.getText().toString();
-            Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
-            intent1.putExtra(SCORE, score);
-            intent1.putExtra(EXTRA_MESSAG2, message);
 
-            startActivity(intent1);
-        }
 
             questionView.setText(quiz.get(count).getQuestion());
             button1.setText(quiz.get(count).getChoice1());
