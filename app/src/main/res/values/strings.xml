@@ -19,5 +19,108 @@
     <string name="back">Return</string>
     <string name="timer">00:15</string>
 
+    <string name="q1">Bucharest is the capital \n city of which country?</string>
+    <string name="q1Answer">Romania</string>
+    <string name="q1Choice1">Ukraine</string>
+    <string name="q1Choice2">Romania</string>
+    <string name="q1Choice3">Belarus</string>
+    <string name="q1Choice4">Moldova</string>
 
+    <string name="q2">Of these oceans, which\n is the largest?</string>
+    <string name="q2Answer">Atlantic</string>
+    <string name="q2Choice1">Indian</string>
+    <string name="q2Choice2">Southern</string>
+    <string name="q2Choice3">Arctic</string>
+    <string name="q2Choice4">Atlantic</string>
+
+    <string name="q3">What is the worlds longest \n above-ground mountain range?</string>
+    <string name="q3Answer">Andes</string>
+    <string name="q3Choice1">Himalayas</string>
+    <string name="q3Choice2">Andes</string>
+    <string name="q3Choice3">Great Dividing Range</string>
+    <string name="q3Choice4">Rocky Mountains</string>
+
+    <string name="q4">What is the smallest \n country in the world?</string>
+    <string name="q4Answer">Vatican City</string>
+    <string name="q4Choice1">Vatican City</string>
+    <string name="q4Choice2">Monaco</string>
+    <string name="q4Choice3">Nauru</string>
+    <string name="q4Choice4">Maldives</string>
+
+    <string name="q5">Which of the following\ncountries is located nearest\nto the equator?</string>
+    <string name="q5Answer">Kenya</string>
+    <string name="q5Choice1">Kenya</string>
+    <string name="q5Choice2">Puerto Rico</string>
+    <string name="q5Choice3">The Philippines</string>
+    <string name="q5Choice4">Fiji</string>
+
+    <string name="q6">World War I began\nin which year?</string>
+    <string name="q6Answer">1914</string>
+    <string name="q6Choice1">1928</string>
+    <string name="q6Choice2">1938</string>
+    <string name="q6Choice3">1917</string>
+    <string name="q6Choice4">1914</string>
+
+    <string name="q7">Adolf Hitler was born in which country?</string>
+    <string name="q7Answer">Austria</string>
+    <string name="q7Choice1">France</string>
+    <string name="q7Choice2">Germany</string>
+    <string name="q7Choice3">Austria</string>
+    <string name="q7Choice4">Hungary</string>
+
+    <string name="q8">This disease killed a third\nof Europes population in the 14thcentury:</string>
+    <string name="q8Answer">The Bubonic Plague</string>
+    <string name="q8Choice1">The White Death</string>
+    <string name="q8Choice2">The Black Plague</string>
+    <string name="q8Choice3">Smallpox</string>
+    <string name="q8Choice4">The Bubonic Plague</string>
+
+    <string name="q9">The Hundred Years War was fought\nbetween what two countries?</string>
+    <string name="q9Answer">France and England</string>
+    <string name="q9Choice1">Italy and Carthage</string>
+    <string name="q9Choice2">England and Germany</string>
+    <string name="q9Choice3">France and England</string>
+    <string name="q9Choice4">Spain and France</string>
+
+    <string name="q10">Who was the first Western explorer to reach China?</string>
+    <string name="q10Answer">Marco Polo</string>
+    <string name="q10Choice1">Cook</string>
+    <string name="q10Choice2">Marco Polo</string>
+    <string name="q10Choice3">Magellan</string>
+    <string name="q10Choice4">Sir Francis Drake</string>
+
+    <string name="q11">The gas usually filled in the electric bulb is:</string>
+    <string name="q11Answer">Nitrogen</string>
+    <string name="q11Choice1">Hydrogen</string>
+    <string name="q11Choice2">Carbon dioxide</string>
+    <string name="q11Choice3">Oxygen</string>
+    <string name="q11Choice4">Nitrogen</string>
+
+    <string name="q12">Which planet is known as the Red Planet?</string>
+    <string name="q12Answer">Mars</string>
+    <string name="q12Choice1">Mercury</string>
+    <string name="q12Choice2">Mars</string>
+    <string name="q12Choice3">Earth</string>
+    <string name="q12Choice4">Jupiter</string>
+
+    <string name="q13">Which of the following is necessary for \n burning (combustion)?</string>
+    <string name="q13Answer">nitrogen</string>
+    <string name="q13Choice1">Petrol</string>
+    <string name="q13Choice2">Carbon</string>
+    <string name="q13Choice3">Oxygen</string>
+    <string name="q13Choice4">Nitrogen</string>
+
+    <string name="q14">Which kind of waves are used\nto make and receive cellphone calls?</string>
+    <string name="q14Answer">Radio waves</string>
+    <string name="q14Choice1">Radio waves</string>
+    <string name="q14Choice2">Visible light waves</string>
+    <string name="q14Choice3">Sound waves</string>
+    <string name="q14Choice4">Gravity waves</string>
+
+    <string name="q15">What does a light-year measure?</string>
+    <string name="q15Answer">Distance</string>
+    <string name="q15Choice1">Brightness</string>
+    <string name="q15Choice2">Time</string>
+    <string name="q15Choice3">Distance</string>
+    <string name="q15Choice4">Weight</string>
 </resources>

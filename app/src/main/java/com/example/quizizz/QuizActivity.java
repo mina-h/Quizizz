@@ -1,6 +1,9 @@
 package com.example.quizizz;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,14 +16,15 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Random;
 
 import static android.media.CamcorderProfile.get;
 
 public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAG2 = "com.example.myapplication2.MESSAG2";
-
     public static final String SCORE = "com.example.myapplication2.SCORE";
+    private static final long COUNTDOWN_IN_MILLIS = 15000;
 
     ArrayList<Question> quiz;
     ArrayList<Question> gQuiz = new ArrayList<>();
@@ -33,6 +37,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView countView;
     private TextView questionView;
     private TextView questionNumbers;
+    private TextView timerView;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -41,6 +46,13 @@ public class QuizActivity extends AppCompatActivity {
     private String answer;
     private int score = 0;
     private int count = 0;
+
+    private ColorStateList textColorDefaultCd;
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
+
+
+
 
 
     @Override
@@ -59,101 +71,133 @@ public class QuizActivity extends AppCompatActivity {
         countView = findViewById(R.id.question_number);
         questionNumbers = findViewById(R.id.question_number_description);
         questionView = findViewById(R.id.question);
+        timerView = findViewById(R.id.timer);
         button1 = findViewById(R.id.first_choice);
         button2 = findViewById(R.id.second_choice);
         button3 = findViewById(R.id.third_choice);
         button4 = findViewById(R.id.forth_choice);
 
+        textColorDefaultCd = timerView.getTextColors();
 
-        Question question1 = new Question("Bucharest is the capital \n city of which country?",
-                "Romania",
-                "Ukraine",
-                "Romania",
-                "Belarus",
-                "Moldova"
+        Question question1 = new Question(getString(R.string.q1),
+                getString(R.string.q1Answer),
+                getString(R.string.q1Choice1),
+                getString(R.string.q1Choice2),
+                getString(R.string.q1Choice3),
+                getString(R.string.q1Choice4)
+        );
+
+        Question question2 = new Question(getString(R.string.q2),
+                getString(R.string.q2Answer),
+                getString(R.string.q2Choice1),
+                getString(R.string.q2Choice2),
+                getString(R.string.q2Choice3),
+                getString(R.string.q2Choice4)
+        );
+
+        Question question3 = new Question(getString(R.string.q3),
+                getString(R.string.q3Answer),
+                getString(R.string.q3Choice1),
+                getString(R.string.q3Choice2),
+                getString(R.string.q3Choice3),
+                getString(R.string.q3Choice4)
 
         );
 
-        Question question2 = new Question("Of these oceans,  which \n is the largest?",
-                "Atlantic",
-                "Indian",
-                "Southern",
-                "Arctic",
-                "Atlantic"
+        Question question4 = new Question(getString(R.string.q4),
+                getString(R.string.q4Answer),
+                getString(R.string.q4Choice1),
+                getString(R.string.q4Choice2),
+                getString(R.string.q4Choice3),
+                getString(R.string.q4Choice4)
         );
 
-        Question question3 = new Question("What is the world's longest \n above-ground mountain range?",
-                "Andes",
-                "Himalayas",
-                "Andes",
-                "Great Dividing Range",
-                "Rocky Mountains"
-
+        Question question5 = new Question(getString(R.string.q5),
+                getString(R.string.q5Answer),
+                getString(R.string.q5Choice1),
+                getString(R.string.q5Choice2),
+                getString(R.string.q5Choice3),
+                getString(R.string.q5Choice4)
         );
 
-        Question question4 = new Question("What is the smallest \n country in the world?",
-                "Vatican City",
-                "Vatican City",
-                "Monaco",
-                "Nauru",
-                "Maldives"
+        Question question6 = new Question(getString(R.string.q6),
+                getString(R.string.q6Answer),
+                getString(R.string.q6Choice1),
+                getString(R.string.q6Choice2),
+                getString(R.string.q6Choice3),
+                getString(R.string.q6Choice4)
         );
 
-        Question question5 = new Question("Which of the following\ncountries is located nearest" +
-                "\nto the equator?",
-                "Kenya",
-                "Kenya",
-                "Puerto Rico",
-                "The Philippines",
-                "Fiji"
+        Question question7 = new Question(getString(R.string.q7),
+                getString(R.string.q7Answer),
+                getString(R.string.q7Choice1),
+                getString(R.string.q7Choice2),
+                getString(R.string.q7Choice3),
+                getString(R.string.q7Choice4)
         );
 
-        Question question6 = new Question("World War I began\nin which year?",
-                "1914",
-                "1928",
-                "1938",
-                "1917",
-                "1914"
+        Question question8 = new Question(getString(R.string.q8),
+                getString(R.string.q8Answer),
+                getString(R.string.q8Choice1),
+                getString(R.string.q8Choice2),
+                getString(R.string.q8Choice3),
+                getString(R.string.q8Choice4)
         );
 
-        Question question7 = new Question("Adolf Hitler was born in which country?",
-                "Austria",
-                "France",
-                "Germany",
-                "Austria",
-                "Hungary"
+        Question question9 = new Question(getString(R.string.q9),
+                getString(R.string.q9Answer),
+                getString(R.string.q9Choice1),
+                getString(R.string.q9Choice2),
+                getString(R.string.q9Choice3),
+                getString(R.string.q9Choice4)
         );
 
-        Question question8 = new Question("This disease killed a third" +
-                "\nof Europe'spopulationin the 14thcentury:",
-                "The Bubonic Plague",
-                "The White Death",
-                "The Black Plague",
-                "Smallpox",
-                "The Bubonic Plague"
+        Question question10 = new Question(getString(R.string.q10),
+                getString(R.string.q10Answer),
+                getString(R.string.q10Choice1),
+                getString(R.string.q10Choice2),
+                getString(R.string.q10Choice3),
+                getString(R.string.q10Choice4)
         );
 
-        Question question9 = new Question("The gas usually filled in the electric bulb is:",
-                "nitrogen",
-                "hydrogen",
-                "carbon dioxide",
-                "oxygen",
-                "nitrogen"
-        );
-        Question question10 = new Question("Which planet is known as the Red Planet?",
-                "Mars",
-                "Mercury",
-                "Mars",
-                " Earth",
-                "Jupiter"
+        Question question11 = new Question(getString(R.string.q11),
+                getString(R.string.q11Answer),
+                getString(R.string.q11Choice1),
+                getString(R.string.q11Choice2),
+                getString(R.string.q11Choice3),
+                getString(R.string.q11Choice4)
         );
 
-        Question question11 = new Question("Which of the following is necessary for \n burning (combustion)?",
-                "nitrogen",
-                "petrol",
-                "carbon",
-                "Oxygen",
-                "nitrogen"
+        Question question12 = new Question(getString(R.string.q12),
+                getString(R.string.q12Answer),
+                getString(R.string.q12Choice1),
+                getString(R.string.q12Choice2),
+                getString(R.string.q12Choice3),
+                getString(R.string.q12Choice4)
+        );
+
+        Question question13 = new Question(getString(R.string.q13),
+                getString(R.string.q13Answer),
+                getString(R.string.q13Choice1),
+                getString(R.string.q13Choice2),
+                getString(R.string.q13Choice3),
+                getString(R.string.q13Choice4)
+        );
+
+        Question question14 = new Question(getString(R.string.q14),
+                getString(R.string.q14Answer),
+                getString(R.string.q14Choice1),
+                getString(R.string.q14Choice2),
+                getString(R.string.q14Choice3),
+                getString(R.string.q14Choice4)
+        );
+
+        Question question15 = new Question(getString(R.string.q15),
+                getString(R.string.q15Answer),
+                getString(R.string.q15Choice1),
+                getString(R.string.q15Choice2),
+                getString(R.string.q15Choice3),
+                getString(R.string.q15Choice4)
         );
 
 
@@ -162,16 +206,34 @@ public class QuizActivity extends AppCompatActivity {
         gQuiz.add(question3);
         gQuiz.add(question4);
         gQuiz.add(question5);
-        hQuiz.add(question6); // 6-8 History
+        hQuiz.add(question6); // 6-10 History
         hQuiz.add(question7);
         hQuiz.add(question8);
-        sQuiz.add(question9);  // 9-11 Science
-        sQuiz.add(question10);
-        sQuiz.add(question11);
-        mQuiz.add(question3);  // mixed quiz
+        hQuiz.add(question9);
+        hQuiz.add(question10);
+        sQuiz.add(question11);// 11-15 Science
+        sQuiz.add(question12);
+        sQuiz.add(question13);
+        sQuiz.add(question14);
+        sQuiz.add(question15);
+        mQuiz.add(question1);  // mixed quiz
+        mQuiz.add(question2);
+        mQuiz.add(question3);
+        mQuiz.add(question4);
         mQuiz.add(question5);
-        mQuiz.add(question10);
+        mQuiz.add(question6);
         mQuiz.add(question7);
+        mQuiz.add(question8);
+        mQuiz.add(question9);
+        mQuiz.add(question10);
+        mQuiz.add(question11);
+        mQuiz.add(question12);
+        mQuiz.add(question13);
+        mQuiz.add(question14);
+        mQuiz.add(question15);
+
+
+
 
 
         if (quizCategory.equals(getString(R.string.geography_quiz))) {
@@ -190,6 +252,8 @@ public class QuizActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                countDownTimer.cancel();
+
                 if (button1.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
@@ -200,11 +264,11 @@ public class QuizActivity extends AppCompatActivity {
                         Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
-
                         startActivity(intent1);
                     }
-                    else
+                    else {
                         updateQuestion();
+                    }
 
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
@@ -227,6 +291,8 @@ public class QuizActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                countDownTimer.cancel();
+
                 if (button2.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
@@ -263,6 +329,8 @@ public class QuizActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                countDownTimer.cancel();
+
                 if (button3.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
@@ -298,10 +366,13 @@ public class QuizActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                countDownTimer.cancel();
+
                 if (button4.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
                     Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
@@ -315,6 +386,7 @@ public class QuizActivity extends AppCompatActivity {
                         updateQuestion();
                 } else {
                     Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
@@ -329,11 +401,7 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
-
-
             updateQuestion();
-
-
     }
 
     private void updateQuestion() {
@@ -349,7 +417,54 @@ public class QuizActivity extends AppCompatActivity {
             count = count + 1;
             updateCount(count);
 
+            timeLeftInMillis = COUNTDOWN_IN_MILLIS;
+            startCountDown();
 
+    }
+
+    private void startCountDown(){
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                timeLeftInMillis = 0;
+                updateCountDownText();
+
+                Toast.makeText(QuizActivity.this, "Time is up!", Toast.LENGTH_SHORT).show();
+                if (count == quiz.size()) {
+                    TextView text = findViewById(R.id.transferred_name);
+                    String message = text.getText().toString();
+                    Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                    intent1.putExtra(SCORE, score);
+                    intent1.putExtra(EXTRA_MESSAG2, message);
+
+                    startActivity(intent1);
+
+                } else {
+                    updateQuestion();
+
+                }
+            }
+        }.start();
+    }
+
+    private void updateCountDownText(){
+        int minutes = (int) (timeLeftInMillis/ 1000) / 60;
+        int seconds = (int) (timeLeftInMillis/ 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        timerView.setText(timeFormatted);
+
+        if (timeLeftInMillis < 10000){
+            timerView.setTextColor(Color.RED);
+        } else  {
+            timerView.setTextColor(textColorDefaultCd);
+        }
     }
 
     private void updateScore (int point){
@@ -359,5 +474,11 @@ public class QuizActivity extends AppCompatActivity {
     private void updateCount (int questionCount){
         countView.setText("" + questionCount);
     }
-
+     @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if (countDownTimer != null){
+            countDownTimer.cancel();
+        }
+     }
 }
