@@ -20,11 +20,11 @@ public class ResultActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String message1 = intent.getStringExtra(QuizActivity.EXTRA_MESSAG2);
+        String message1 = intent.getStringExtra(QuestionActivity.EXTRA_MESSAG2);
         TextView displayMessageView = findViewById(R.id.namee);
-        displayMessageView.setText(message1 +" score:");
+        displayMessageView.setText(message1 +" "+ getString(R.string.score));
 
-        int message = intent.getIntExtra(QuizActivity.SCORE, 0);
+        int message = intent.getIntExtra(QuestionActivity.SCORE, 0);
         result = findViewById(R.id.result_score);
         result.setText(message + "");
 

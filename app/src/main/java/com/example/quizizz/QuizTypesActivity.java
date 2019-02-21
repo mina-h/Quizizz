@@ -3,7 +3,6 @@ package com.example.quizizz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -41,7 +40,7 @@ public class QuizTypesActivity extends AppCompatActivity {
 
 
         Button button = (Button) v;
-        Intent intent = new Intent(QuizTypesActivity.this, QuizActivity.class);
+        Intent intent = new Intent(QuizTypesActivity.this, QuestionActivity.class);
 
         intent.putExtra(EXTRA_MESSAG, message);
         intent.putExtra(EXTRA_MESSAG1, button.getText().toString());
@@ -61,7 +60,7 @@ public class QuizTypesActivity extends AppCompatActivity {
         //    public void onClick(View v) {
           //      TextView editText = findViewById(R.id.typed_name);
             //    String message = editText.getText().toString();
-             //   Intent intent = new Intent(QuizTypesActivity.this, QuizActivity.class);
+             //   Intent intent = new Intent(QuizTypesActivity.this, QuestionActivity.class);
              //   intent.putExtra(EXTRA_MESSAG, message);
             //    startActivity(intent);
      //       }

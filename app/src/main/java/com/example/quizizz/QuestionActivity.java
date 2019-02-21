@@ -4,27 +4,23 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
-import java.util.Random;
 
 import static android.media.CamcorderProfile.get;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAG2 = "com.example.myapplication2.MESSAG2";
     public static final String SCORE = "com.example.myapplication2.SCORE";
-    private static final long COUNTDOWN_IN_MILLIS = 15000;
+    private static final long COUNTDOWN_IN_MILLIS = 20000;
 
     ArrayList<Question> quiz;
     ArrayList<Question> gQuiz = new ArrayList<>();
@@ -58,7 +54,7 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_geography_quiz);
+        setContentView(R.layout.activity_question);
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(QuizTypesActivity.EXTRA_MESSAG);
@@ -257,11 +253,11 @@ public class QuizActivity extends AppCompatActivity {
                 if (button1.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
                         startActivity(intent1);
@@ -271,11 +267,11 @@ public class QuizActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -296,11 +292,11 @@ public class QuizActivity extends AppCompatActivity {
                 if (button2.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -309,11 +305,11 @@ public class QuizActivity extends AppCompatActivity {
                     else
                         updateQuestion();
                 } else {
-                    Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -334,11 +330,11 @@ public class QuizActivity extends AppCompatActivity {
                 if (button3.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -347,11 +343,11 @@ public class QuizActivity extends AppCompatActivity {
                     else
                         updateQuestion();
                 } else {
-                    Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -371,12 +367,12 @@ public class QuizActivity extends AppCompatActivity {
                 if (button4.getText().equals(answer)) {
                     score = score + 10;
                     updateScore(score);
-                    Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
 
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -385,12 +381,12 @@ public class QuizActivity extends AppCompatActivity {
                     else
                         updateQuestion();
                 } else {
-                    Toast.makeText(QuizActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
 
                     if (count == quiz.size()) {
                         TextView text = findViewById(R.id.transferred_name);
                         String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                         intent1.putExtra(SCORE, score);
                         intent1.putExtra(EXTRA_MESSAG2, message);
 
@@ -435,11 +431,11 @@ public class QuizActivity extends AppCompatActivity {
                 timeLeftInMillis = 0;
                 updateCountDownText();
 
-                Toast.makeText(QuizActivity.this, "Time is up!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(QuestionActivity.this, "Time is up!", Toast.LENGTH_SHORT).show();
                 if (count == quiz.size()) {
                     TextView text = findViewById(R.id.transferred_name);
                     String message = text.getText().toString();
-                    Intent intent1 = new Intent(QuizActivity.this, ResultActivity.class);
+                    Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
                     intent1.putExtra(SCORE, score);
                     intent1.putExtra(EXTRA_MESSAG2, message);
 

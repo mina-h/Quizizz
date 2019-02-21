@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="title">Qiuzy Snake \n and Ladder</string>
+    <string name="title">Quizizz</string>
     <string name="first_button">One Player</string>
     <string name="second_button">Two Player</string>
     <string name="type_name">Please type your name!</string>
@@ -12,10 +12,10 @@
     <string name="history_quiz">History Quiz</string>
     <string name="science_quiz">Science Quiz</string>
     <string name="mixed_quiz">Mixed Quiz</string>
-    <string name="score">score:</string>
+    <string name="score"> score:</string>
     <string name="question_number">1</string>
     <string name="question_number_description">/5 Question</string>
-    <string name="result">Result:</string>
+    <string name="result">Result</string>
     <string name="back">Return</string>
     <string name="timer">00:15</string>
 
@@ -33,7 +33,7 @@
     <string name="q2Choice3">Arctic</string>
     <string name="q2Choice4">Atlantic</string>
 
-    <string name="q3">What is the worlds longest \n above-ground mountain range?</string>
+    <string name="q3">What is the worlds\nlongest above-ground\nmountain range?</string>
     <string name="q3Answer">Andes</string>
     <string name="q3Choice1">Himalayas</string>
     <string name="q3Choice2">Andes</string>
@@ -61,21 +61,21 @@
     <string name="q6Choice3">1917</string>
     <string name="q6Choice4">1914</string>
 
-    <string name="q7">Adolf Hitler was born in which country?</string>
+    <string name="q7">Adolf Hitler was born\nin which country?</string>
     <string name="q7Answer">Austria</string>
     <string name="q7Choice1">France</string>
     <string name="q7Choice2">Germany</string>
     <string name="q7Choice3">Austria</string>
     <string name="q7Choice4">Hungary</string>
 
-    <string name="q8">This disease killed a third\nof Europes population in the 14thcentury:</string>
+    <string name="q8">This disease killed a\nthird of Europes population\nin the 14thcentury:</string>
     <string name="q8Answer">The Bubonic Plague</string>
     <string name="q8Choice1">The White Death</string>
     <string name="q8Choice2">The Black Plague</string>
     <string name="q8Choice3">Smallpox</string>
     <string name="q8Choice4">The Bubonic Plague</string>
 
-    <string name="q9">The Hundred Years War was fought\nbetween what two countries?</string>
+    <string name="q9">The Hundred Years War\nwas fought between what\ntwo countries?</string>
     <string name="q9Answer">France and England</string>
     <string name="q9Choice1">Italy and Carthage</string>
     <string name="q9Choice2">England and Germany</string>
@@ -110,7 +110,7 @@
     <string name="q13Choice3">Oxygen</string>
     <string name="q13Choice4">Nitrogen</string>
 
-    <string name="q14">Which kind of waves are used\nto make and receive cellphone calls?</string>
+    <string name="q14">Which kind of waves are\nused to make and receive\ncellphone calls?</string>
     <string name="q14Answer">Radio waves</string>
     <string name="q14Choice1">Radio waves</string>
     <string name="q14Choice2">Visible light waves</string>

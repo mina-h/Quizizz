@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title">Quizizz</string>
+    <string name="first_button">En spelare</string>
+    <string name="second_button">Två spelare</string>
+    <string name="type_name">Vänligen skriv ditt namn</string>
+    <string name="hint">Skriv ditt namn här...</string>
+    <string name="next">Nästa</string>
+    <string name="welcome">Välkommen till Quizizz </string>
+    <string name="choose_quiz">Välj ett quiz-ämne du \n vill svara på </string>
+    <string name="geography_quiz">Geografi Quiz</string>
+    <string name="history_quiz">Historia Quiz</string>
+    <string name="science_quiz">Vetenskap Quiz</string>
+    <string name="mixed_quiz">Blandad Quiz</string>
+    <string name="score"> poäng:</string>
+    <string name="question_number">1</string>
+    <string name="question_number_description">/5</string>
+    <string name="result">Resultat</string>
+    <string name="back">Tillbaka</string>
+    <string name="timer">00:15</string>
+
+    <string name="q1">Bukarest är huvudstaden\ni vilket land?</string>
+    <string name="q1Answer">Rumänien</string>
+    <string name="q1Choice1">Ukraina</string>
+    <string name="q1Choice2">Rumänien</string>
+    <string name="q1Choice3">Vitryssland</string>
+    <string name="q1Choice4">Moldavien</string>
+
+    <string name="q2">Av dessa hav, vilket\när det största?</string>
+    <string name="q2Answer">Atlanten</string>
+    <string name="q2Choice1">Indisk</string>
+    <string name="q2Choice2">Sydlig</string>
+    <string name="q2Choice3">Arktisk</string>
+    <string name="q2Choice4">Atlanten</string>
+
+    <string name="q3">Vad är världens längsta\nberg över marken?</string>
+    <string name="q3Answer">Anderna</string>
+    <string name="q3Choice1">Himalaya</string>
+    <string name="q3Choice2">Anderna</string>
+    <string name="q3Choice3">Great Dividing Range</string>
+    <string name="q3Choice4">Klippiga bergen</string>
+
+    <string name="q4">Vad är det minsta landet\ni världen?</string>
+    <string name="q4Answer">Vatikanstaten</string>
+    <string name="q4Choice1">Vatikanstaten</string>
+    <string name="q4Choice2">Monaco</string>
+    <string name="q4Choice3">Nauru</string>
+    <string name="q4Choice4">Maldiverna</string>
+
+    <string name="q5">Vilket av följande länder\nligger närmast ekvatorn?</string>
+    <string name="q5Answer">Kenya</string>
+    <string name="q5Choice1">Kenya</string>
+    <string name="q5Choice2">Puerto Rico</string>
+    <string name="q5Choice3">Filippinerna</string>
+    <string name="q5Choice4">Fiji</string>
+
+    <string name="q6">Världskriget började\ni vilket år?</string>
+    <string name="q6Answer">1914</string>
+    <string name="q6Choice1">1928</string>
+    <string name="q6Choice2">1938</string>
+    <string name="q6Choice3">1917</string>
+    <string name="q6Choice4">1914</string>
+
+    <string name="q7">Adolf Hitler föddes\ni vilket land?</string>
+    <string name="q7Answer">Österrike</string>
+    <string name="q7Choice1">Frankrike</string>
+    <string name="q7Choice2">Tyskland</string>
+    <string name="q7Choice3">Österrike</string>
+    <string name="q7Choice4">Ungern</string>
+
+    <string name="q8">Denna sjukdom dödade en\ntredjedel av Europas befolkning\nunder 1400-talet:</string>
+    <string name="q8Answer">Bubonicpesten</string>
+    <string name="q8Choice1">The White Death</string>
+    <string name="q8Choice2">Den svarta pesten</string>
+    <string name="q8Choice3">Smittkoppor</string>
+    <string name="q8Choice4">Bubonicpesten</string>
+
+    <string name="q9">Hundraårskriget kämpades\n mellan vilka länder?</string>
+    <string name="q9Answer">Frankrike och England</string>
+    <string name="q9Choice1">Italien och Carthage</string>
+    <string name="q9Choice2">England och Tyskland</string>
+    <string name="q9Choice3">Frankrike och England</string>
+    <string name="q9Choice4">Spanien och Frankrike</string>
+
+    <string name="q10">Vem var den första västerländska\nutforskaren som nådde Kina?</string>
+    <string name="q10Answer">Marco Polo</string>
+    <string name="q10Choice1">Cook</string>
+    <string name="q10Choice2">Marco Polo</string>
+    <string name="q10Choice3">Magellan</string>
+    <string name="q10Choice4">Sir Francis Drake</string>
+
+    <string name="q11">Den gas som vanligtvis fylls\ni den elektriska lampan är:</string>
+    <string name="q11Answer">Kväve</string>
+    <string name="q11Choice1">Väte</string>
+    <string name="q11Choice2">koldioxid</string>
+    <string name="q11Choice3">Syre</string>
+    <string name="q11Choice4">Kväve</string>
+
+        <string name="q12">Vilken planet är känd som\nden röda planeten?</string>
+    <string name="q12Answer">Mars</string>
+    <string name="q12Choice1">Merkurius</string>
+    <string name="q12Choice2">Mars</string>
+    <string name="q12Choice3">Jord</string>
+    <string name="q12Choice4">Jupiter</string>
+
+    <string name="q13">Vilket av följande är\nnödvändigt för bränning?</string>
+    <string name="q13Answer">Syre</string>
+    <string name="q13Choice1">Bensin</string>
+    <string name="q13Choice2">Kol</string>
+    <string name="q13Choice3">Syre</string>
+    <string name="q13Choice4">Kväve</string>
+
+    <string name="q14">Vilken typ av vågor används\nför att ringa och ta\nemot mobilsamtal?</string>
+    <string name="q14Answer">Radiovågor</string>
+    <string name="q14Choice1">Radiovågor</string>
+    <string name="q14Choice2">Synliga ljusvågor</string>
+    <string name="q14Choice3">Ljudvågor</string>
+    <string name="q14Choice4">gravitation vågor</string>
+
+    <string name="q15">Vad mäter ett ljusårsmål?</string>
+    <string name="q15Answer">Avstånd</string>
+    <string name="q15Choice1">Ljusstyrka</string>
+    <string name="q15Choice2">Tid</string>
+    <string name="q15Choice3">Avstånd</string>
+    <string name="q15Choice4">Vikt</string>
+</resources>
