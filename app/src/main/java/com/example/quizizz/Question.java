@@ -42,9 +42,4 @@ public class Question {
     public String getChoice4() {
         return choice4;
     }
-
-
-
-
-
 }

@@ -28,7 +28,6 @@ public class QuestionActivity extends AppCompatActivity {
     ArrayList<Question> sQuiz = new ArrayList<>();
     ArrayList<Question> mQuiz = new ArrayList<>();
 
-
     private TextView pointsView;
     private TextView countView;
     private TextView questionView;
@@ -46,9 +45,6 @@ public class QuestionActivity extends AppCompatActivity {
     private ColorStateList textColorDefaultCd;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
-
-
-
 
 
     @Override
@@ -229,9 +225,6 @@ public class QuestionActivity extends AppCompatActivity {
         mQuiz.add(question15);
 
 
-
-
-
         if (quizCategory.equals(getString(R.string.geography_quiz))) {
             quiz = gQuiz;
         } else if (quizCategory.equals(getString(R.string.history_quiz))) {
@@ -254,35 +247,13 @@ public class QuestionActivity extends AppCompatActivity {
                     score = score + 10;
                     updateScore(score);
                     Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-                        startActivity(intent1);
-                    }
-                    else {
-                        updateQuestion();
-                    }
-
+                    checkIfQuizIsDone();
                 } else {
                     Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-
-                        startActivity(intent1);
-
-                    } else
-                    updateQuestion();
+                    checkIfQuizIsDone();
                 }
             }
         });
-
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -293,32 +264,12 @@ public class QuestionActivity extends AppCompatActivity {
                     score = score + 10;
                     updateScore(score);
                     Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
+                    checkIfQuizIsDone();
 
-                        startActivity(intent1);
-                    }
-                    else
-                        updateQuestion();
                 } else {
                     Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-
-                        startActivity(intent1);
-
-                    } else
-                        updateQuestion();
+                    checkIfQuizIsDone();
                 }
-
             }
         });
 
@@ -331,30 +282,11 @@ public class QuestionActivity extends AppCompatActivity {
                     score = score + 10;
                     updateScore(score);
                     Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
+                    checkIfQuizIsDone();
 
-                        startActivity(intent1);
-                    }
-                    else
-                        updateQuestion();
                 } else {
                     Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-
-                        startActivity(intent1);
-
-                    } else
-                        updateQuestion();
+                    checkIfQuizIsDone();
                 }
             }
         });
@@ -368,32 +300,10 @@ public class QuestionActivity extends AppCompatActivity {
                     score = score + 10;
                     updateScore(score);
                     Toast.makeText(QuestionActivity.this, "Correct", Toast.LENGTH_SHORT).show();
-
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-
-                        startActivity(intent1);
-                    }
-                    else
-                        updateQuestion();
+                    checkIfQuizIsDone();
                 } else {
                     Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
-
-                    if (count == quiz.size()) {
-                        TextView text = findViewById(R.id.transferred_name);
-                        String message = text.getText().toString();
-                        Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent1.putExtra(SCORE, score);
-                        intent1.putExtra(EXTRA_MESSAG2, message);
-
-                        startActivity(intent1);
-
-                    } else
-                        updateQuestion();
+                    checkIfQuizIsDone();
                 }
             }
         });
@@ -401,8 +311,6 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-
-
             questionView.setText(quiz.get(count).getQuestion());
             button1.setText(quiz.get(count).getChoice1());
             button2.setText(quiz.get(count).getChoice2());
@@ -415,7 +323,6 @@ public class QuestionActivity extends AppCompatActivity {
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
-
     }
 
     private void startCountDown(){
@@ -425,26 +332,12 @@ public class QuestionActivity extends AppCompatActivity {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
             }
-
             @Override
             public void onFinish() {
                 timeLeftInMillis = 0;
                 updateCountDownText();
-
                 Toast.makeText(QuestionActivity.this, "Time is up!", Toast.LENGTH_SHORT).show();
-                if (count == quiz.size()) {
-                    TextView text = findViewById(R.id.transferred_name);
-                    String message = text.getText().toString();
-                    Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
-                    intent1.putExtra(SCORE, score);
-                    intent1.putExtra(EXTRA_MESSAG2, message);
-
-                    startActivity(intent1);
-
-                } else {
-                    updateQuestion();
-
-                }
+                checkIfQuizIsDone();
             }
         }.start();
     }
@@ -461,6 +354,19 @@ public class QuestionActivity extends AppCompatActivity {
         } else  {
             timerView.setTextColor(textColorDefaultCd);
         }
+    }
+
+    private void checkIfQuizIsDone(){
+        if (count == quiz.size()) {
+            TextView text = findViewById(R.id.transferred_name);
+            String message = text.getText().toString();
+            Intent intent1 = new Intent(QuestionActivity.this, ResultActivity.class);
+            intent1.putExtra(SCORE, score);
+            intent1.putExtra(EXTRA_MESSAG2, message);
+            startActivity(intent1);
+        }
+        else
+            updateQuestion();
     }
 
     private void updateScore (int point){

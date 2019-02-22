@@ -82,7 +82,7 @@
     <string name="q9Choice3">France and England</string>
     <string name="q9Choice4">Spain and France</string>
 
-    <string name="q10">Who was the first Western explorer to reach China?</string>
+    <string name="q10">Who was the first Western\nexplorer to reach China?</string>
     <string name="q10Answer">Marco Polo</string>
     <string name="q10Choice1">Cook</string>
     <string name="q10Choice2">Marco Polo</string>

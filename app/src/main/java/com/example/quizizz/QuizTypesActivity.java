@@ -18,52 +18,22 @@ public class QuizTypesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_types);
 
-        // receiving data from MainActivity
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         TextView displayMessageView = findViewById(R.id.typed_name);
         displayMessageView.setText(message);
-
-     //   init();
     }
 
     public void startQuiz(View v){
-
-
-
-      //  Log.d("MainActivity", "knappen tryckt");
-
         TextView editText = findViewById(R.id.typed_name);
         String message = editText.getText().toString();
-
-
 
         Button button = (Button) v;
         Intent intent = new Intent(QuizTypesActivity.this, QuestionActivity.class);
 
         intent.putExtra(EXTRA_MESSAG, message);
         intent.putExtra(EXTRA_MESSAG1, button.getText().toString());
-
-
         startActivity(intent);
     }
-
-
-
-
-
-    //sending data while clicking on a specific button to the next activity
-  //  public void init() {
-    //  button.setOnClickListener(new View.OnClickListener() {
-      //      @Override
-        //    public void onClick(View v) {
-          //      TextView editText = findViewById(R.id.typed_name);
-            //    String message = editText.getText().toString();
-             //   Intent intent = new Intent(QuizTypesActivity.this, QuestionActivity.class);
-             //   intent.putExtra(EXTRA_MESSAG, message);
-            //    startActivity(intent);
-     //       }
-       // });
-    //}
 }

@@ -11,13 +11,10 @@ public class ResultActivity extends AppCompatActivity {
     private TextView result;
     private Button button;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
-
 
         Intent intent = getIntent();
         String message1 = intent.getStringExtra(QuestionActivity.EXTRA_MESSAG2);
@@ -28,7 +25,6 @@ public class ResultActivity extends AppCompatActivity {
         result = findViewById(R.id.result_score);
         result.setText(message + "");
 
-
         button = findViewById(R.id.back);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,16 +32,10 @@ public class ResultActivity extends AppCompatActivity {
                 openMainActivity();
             }
         });
-
     }
 
     public void openMainActivity(){
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
-
     }
-  //  public void returnToQuiz (View v){
-   //     Intent intent = new Intent (ResultActivity.this, MainActivity.class);
-  //      startActivity(intent);
-  //  }
 }
